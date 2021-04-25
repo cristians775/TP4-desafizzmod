@@ -1,0 +1,55 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="row" style="padding: 5%;
+        margin-top: 5%;
+        background: ghostwhite;
+        ">
+            <form class="col s12" onsubmit="button.disabled = true; return true;" action="/set-correo" method="post">
+                <div style="color:grey darken-1;">
+                    <h2>Complete el campo para poder enviarle el listado de los ultimos 10 productos registrados</h2>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input placeholder="Ingrese el email" value="<%= email ? email : '' %>" name="email"
+                            type="email" class="validate">
+                        <button name="button" class="btn-large right">Enviar</button>
+                    </div>
+
+                </div>
+                <% if(success){ %>
+                    <div class="card-panel green lighten-3">
+                        <h4 class="align center" style="color:white">
+                            <%= message %>
+                        </h4>
+                    </div>
+                    <%}%>
+
+                        <% if(error){ %>
+                            <div class="card-panel red lighten-2">
+                                <h4 class="align center" style="color:white">
+                                    <%= message %>
+                                </h4>
+                            </div>
+                            <%}%>
+
+            </form>
+
+        </div>
+
+
+    </div>
+</body>
+
+</html>

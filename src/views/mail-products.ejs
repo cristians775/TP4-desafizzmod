@@ -1,0 +1,59 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+</head>
+
+<body>
+    <div>
+        <div style="padding:5px;height:50px ;background-color:rgb(69, 69, 158);margin-bottom: 0;margin-top: 5%;">
+            <h1 style="color:white"> Lista de productos</h4>
+        </div>
+        <div style="   padding: 5%;
+       background: ghostwhite;
+       ">
+
+            <table style="text-align: left;border-collapse: collapse;width: 100%;">
+                <thead>
+                    <tr>
+                        <th style="border: 1px solid #dddddd">Foto</th>
+                        <th style="border: 1px solid #dddddd">Nombre</th>
+                        <th style="border: 1px solid #dddddd">Precio</th>
+                        <th style="border: 1px solid #dddddd">Descripcion</th>
+                    </tr>
+                </thead>
+                <% if(products.length){ %>
+                    <%products.forEach(function(product) {%>
+                        <tr>
+                            <td style="border: 1px solid #dddddd">
+                                <img style="width: 60px;height: auto;" class="circle responsive-img large"
+                                    src=<%=product.url%>
+                                >
+                            </td>
+                            <td style="border: 1px solid #dddddd">
+                                <%=product.name%>
+                            </td>
+                            <td style="border: 1px solid #dddddd">
+                                $ <%=product.price%>
+                            </td>
+                            <td style="border: 1px solid #dddddd">
+                                <%=product.description%>
+                            </td>
+                        </tr>
+                        <%});%>
+
+
+                            </tbody>
+            </table>
+
+        </div>
+
+
+    </div>
+    <% } %>
+</body>
+
+</html>
