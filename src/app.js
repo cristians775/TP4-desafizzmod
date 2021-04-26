@@ -24,15 +24,15 @@ app.set("view engine", "ejs");
 
 //ROUTES
 Routes.forEach(({ route, path }) => app.use(path, route));
-app.get("/", (req, res) => res.render("index"));
 
 app.use(errorHandler);
 
+fs.stat(EMAIL_PATH, async (err, stats) => {
+  if (err) {
+    await fs.promises.writeFile(EMAIL_PATH, EMAIL_DEFAULT);
+  }
+});
+
 app.listen(PORT, async () => {
-  fs.stat(EMAIL_PATH, async (err, stats) => {
-    if (err) {
-      await fs.promises.writeFile(EMAIL_PATH, EMAIL_DEFAULT);
-    }
-  });
   console.log("Server running in port:", PORT);
 });
