@@ -27,13 +27,11 @@ export const productFormSchema = Joi.object({
     }),
   description: Joi.string()
     .required()
-    .min(4)
     .max(100)
     .messages({
       "string.base": `descripción: ${schemasMessages.STRING_REQUIRED}`,
       "string.empty": `descripción: ${schemasMessages.CANNOT_EMPTY_FIELD}`,
-      "string.min": `${schemasMessages.MIN_AND_MAX_STRING_REQUIRED}, descripcion`,
-      "string.max": `${schemasMessages.MIN_AND_MAX_STRING_REQUIRED}, descripcion`,
+      "string.max": `${schemasMessages.MAX_STRING_REQUIRED}, descripcion`,
       "any.required": `descripción: ${schemasMessages.STRING_REQUIRED}`,
     }),
   url: Joi.string()

@@ -8,4 +8,5 @@ export const schemasMessages = {
     "Se requiere un numero mayor a 0 y menor a 999999",
   MIN_AND_MAX_STRING_REQUIRED:
     "Se requiere un texto mayor a 4 y menor a 100 palabras",
+  MAX_STRING_REQUIRED: "Se requiere un texto menor a 100 palabras",
 };
