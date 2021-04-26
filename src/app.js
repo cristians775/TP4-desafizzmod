@@ -9,8 +9,8 @@ import { errorHandler } from "./middleware/errorHandler.js";
 
 const app = express();
 dotenv.config({ path: ".env" });
-const PORT = process.env.SERVER_PORT || 8081;
-console.log(process.env.SERVER_PORT);
+const PORT = process.env.SERVER_PORT || 4000;
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
