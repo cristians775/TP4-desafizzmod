@@ -8,8 +8,7 @@ export const insertMail = async (req, res) => {
   const { body } = req;
   try {
     const bodyData = await mailSchema.validateAsync(body);
-
-    writeFile(EMAIL_PATH, bodyData.email).then((result) =>
+    writeFile(EMAIL_PATH, bodyData.email.trim()).then((result) =>
       res.render("mail-form", {
         ...INITIAL_VALUES_MAIL_FORM,
         message: emailMessage.EMAIL_INSERT_SUCCESSFULLY,
