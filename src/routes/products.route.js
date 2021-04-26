@@ -7,6 +7,7 @@ const router = Router();
 
 router.get("/", getAddProductCtrl);
 router.get("/listar", getProductsListCtrl);
+router.get("/ingreso", getAddProductCtrl);
 router.post("/ingreso", insertProductCtrl);
 
 export { router as ProductsRouter };
